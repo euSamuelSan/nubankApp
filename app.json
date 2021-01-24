@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.eusamuelsan.nubankApp"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
