@@ -30,11 +30,11 @@ export default function LoanCard({ user }) {
                 </Text>
             </View>
 
-            <TouchableHighlight style={styles.simulateButton}>
+            <TouchableOpacity style={styles.simulateButton}>
                 <Text style={styles.simulateButtonText}>
                     SIMULAR EMPRÉSTIMO
                 </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </TouchableOpacity>
     );
 }

@@ -27,9 +27,9 @@ export default function LifeInsuranceCard({}) {
                 Conheça Nubank Vida: um seguro simples e que cabe no bolso
             </Text>
 
-            <TouchableHighlight style={styles.knowButton}>
+            <TouchableOpacity style={styles.knowButton}>
                 <Text style={styles.knowButtonText}>CONHECER</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </TouchableOpacity>
     );
 }

@@ -22,11 +22,7 @@ const handleOnPress = () => {
 
 export default function RewardsCard({}) {
     return (
-        <TouchableOpacity
-            style={styles.container}
-            activeOpacity={0.9}
-            onPress={console.log("clicado")}
-        >
+        <TouchableOpacity style={styles.container} activeOpacity={0.9}>
             <View style={styles.title}>
                 <Feather
                     name="gift"
