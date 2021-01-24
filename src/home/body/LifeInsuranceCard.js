@@ -1,25 +1,37 @@
-import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity, TouchableHighlight} from 'react-native'
-import { FontAwesome} from '@expo/vector-icons'
+import React from "react";
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    TouchableHighlight,
+} from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
-import Colors from '../../utils/Colors'
+import Colors from "../../utils/Colors";
 
-export default function LifeInsuranceCard({}){
-
-    return(
-        <TouchableOpacity style={styles.container}>
+export default function LifeInsuranceCard({}) {
+    return (
+        <TouchableOpacity style={styles.container} activeOpacity={0.9}>
             <View style={styles.title}>
-                <FontAwesome name="umbrella" size={28} color={Colors.purple} style={styles.icon}/>
+                <FontAwesome
+                    name="umbrella"
+                    size={28}
+                    color={Colors.purple}
+                    style={styles.icon}
+                />
                 <Text style={styles.lifeInsuranceText}>Seguro de vida</Text>
             </View>
-            
-            <Text style={styles.descriptionText}>Conheça Nubank Vida: um seguro simples e que cabe no bolso</Text>
+
+            <Text style={styles.descriptionText}>
+                Conheça Nubank Vida: um seguro simples e que cabe no bolso
+            </Text>
 
             <TouchableHighlight style={styles.knowButton}>
                 <Text style={styles.knowButtonText}>CONHECER</Text>
             </TouchableHighlight>
         </TouchableOpacity>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -28,15 +40,15 @@ const styles = StyleSheet.create({
         marginBottom: 18,
         borderRadius: 5,
         padding: 20,
-        alignItems: 'flex-start'
+        alignItems: "flex-start",
     },
-    title:{
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        flexDirection: 'row',
-        marginBottom: 15
+    title: {
+        justifyContent: "flex-start",
+        alignItems: "center",
+        flexDirection: "row",
+        marginBottom: 15,
     },
-    icon:{
+    icon: {
         backgroundColor: Colors.lightPink,
         padding: 5,
         borderRadius: 100,
@@ -48,15 +60,15 @@ const styles = StyleSheet.create({
     },
     knowButton: {
         padding: 15,
-        borderRadius:5,
+        borderRadius: 5,
         borderColor: Colors.purple,
-        borderWidth: 1
+        borderWidth: 1,
     },
     knowButtonText: {
         color: Colors.purple,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     descriptionText: {
         marginBottom: 15,
-    }
-})
+    },
+});

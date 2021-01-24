@@ -1,25 +1,51 @@
-import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity, TouchableHighlight} from 'react-native'
-import { Feather} from '@expo/vector-icons'
+import React from "react";
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    TouchableHighlight,
+    Alert,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
 
-import Colors from '../../utils/Colors'
+import Colors from "../../utils/Colors";
 
-export default function RewardsCard({}){
+const handleOnPress = () => {
+    Alert.alert("ATENÇÃO", "Botão Clicado", [
+        {
+            text: "Ok",
+            onPress: () => console.log("apertado"),
+        },
+    ]);
+};
 
-    return(
-        <TouchableOpacity style={styles.container}>
+export default function RewardsCard({}) {
+    return (
+        <TouchableOpacity
+            style={styles.container}
+            activeOpacity={0.9}
+            onPress={console.log("clicado")}
+        >
             <View style={styles.title}>
-                <Feather name="gift" size={28} color={Colors.purple} style={styles.icon}/>
+                <Feather
+                    name="gift"
+                    size={28}
+                    color={Colors.purple}
+                    style={styles.icon}
+                />
                 <Text style={styles.rewardsText}>Rewards</Text>
             </View>
-            
-            <Text style={styles.descriptionText}>Apague compras com pontos que nunca expiram</Text>
 
-            <TouchableHighlight style={styles.knowButton}>
+            <Text style={styles.descriptionText}>
+                Apague compras com pontos que nunca expiram
+            </Text>
+
+            <TouchableOpacity style={styles.knowButton}>
                 <Text style={styles.knowButtonText}>CONHECER</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </TouchableOpacity>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -28,15 +54,15 @@ const styles = StyleSheet.create({
         marginBottom: 18,
         borderRadius: 5,
         padding: 20,
-        alignItems: 'flex-start'
+        alignItems: "flex-start",
     },
-    title:{
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        flexDirection: 'row',
-        marginBottom: 15
+    title: {
+        justifyContent: "flex-start",
+        alignItems: "center",
+        flexDirection: "row",
+        marginBottom: 15,
     },
-    icon:{
+    icon: {
         backgroundColor: Colors.lightPink,
         padding: 5,
         borderRadius: 100,
@@ -48,15 +74,15 @@ const styles = StyleSheet.create({
     },
     knowButton: {
         padding: 15,
-        borderRadius:5,
+        borderRadius: 5,
         borderColor: Colors.purple,
-        borderWidth: 1
+        borderWidth: 1,
     },
     knowButtonText: {
         color: Colors.purple,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     descriptionText: {
         marginBottom: 15,
-    }
-})
+    },
+});
