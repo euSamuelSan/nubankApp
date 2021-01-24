@@ -1,11 +1,5 @@
 import React from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    TouchableHighlight,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import Colors from "../../utils/Colors";
@@ -41,6 +35,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 20,
         alignItems: "flex-start",
+
+        //alignItems: "stretch",
     },
     title: {
         justifyContent: "flex-start",

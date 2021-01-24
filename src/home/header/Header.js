@@ -6,13 +6,13 @@ import Colors from "../../utils/Colors";
 
 export default function Header({
     user,
-    isVisible,
+    isInfoVisible,
     handleVisibility,
     isConfigPressed,
     handleConfigScreen,
 }) {
     const getVisibilityIcon = () => {
-        return isVisible ? "eye-outline" : "eye-off-outline";
+        return isInfoVisible ? "eye-outline" : "eye-off-outline";
     };
 
     const getConfigIcon = () => {

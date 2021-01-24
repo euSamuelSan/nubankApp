@@ -4,7 +4,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 import Colors from "../../utils/Colors";
 
-export default function WalletCard({ user }) {
+export default function WalletCard({ user, isInfoVisible }) {
     const account = user.bank.account;
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.9}>
@@ -13,10 +13,12 @@ export default function WalletCard({ user }) {
                 <Text style={styles.walletText}>Conta</Text>
             </View>
 
-            <View>
-                <Text style={styles.balanceText}>Saldo disponível</Text>
+            <Text style={styles.balanceText}>Saldo disponível</Text>
+            {isInfoVisible ? (
                 <Text style={styles.balanceValue}>R$ {account.balance}</Text>
-            </View>
+            ) : (
+                <View style={styles.hiddenInfo}></View>
+            )}
         </TouchableOpacity>
     );
 }
@@ -50,5 +52,9 @@ const styles = StyleSheet.create({
     balanceText: {
         color: Colors.lightGrey,
         marginBottom: 15,
+    },
+    hiddenInfo: {
+        backgroundColor: Colors.smoke,
+        padding: 25,
     },
 });

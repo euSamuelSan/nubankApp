@@ -1,52 +1,55 @@
-import React, { useState } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
-import Colors from './src/utils/Colors'
+import React, { useState } from "react";
+import { StyleSheet, View, Text } from "react-native";
+import Colors from "./src/utils/Colors";
 
-import Home from './src/home/Home'
+import Home from "./src/home/Home";
 
 export default function App() {
-    const [isVisible, setIsVisible] = useState(false)
+    const [isInfoVisible, setisInfoVisible] = useState(false);
     const handleVisibility = () => {
-        setIsVisible(state => !state)
-    }
+        setisInfoVisible((state) => !state);
+    };
 
     const user = {
         info: {
-            name: 'Samuel',
-            
+            name: "Samuel",
         },
         prefs: {
-            visibility: isVisible,
-            customAvailableLimit: 400.00,
+            visibility: isInfoVisible,
+            customAvailableLimit: 400.0,
         },
         bank: {
             creditCard: {
                 active: true,
                 invoiceClosed: false,
-                totalLimit: 1800.00,
-                actualInvoice: 0.00,
+                totalLimit: 1800.0,
+                actualInvoice: 0.0,
             },
             account: {
-                balance: 543.97
+                balance: 543.97,
             },
             loan: {
                 active: false,
                 available: true,
-                preApprovedValue: 7700
-            }
-        }
-    }
+                preApprovedValue: 7700,
+            },
+        },
+    };
 
     return (
         <View style={styles.container}>
-            <Home user={user} handleVisibility={handleVisibility} isVisible={isVisible} />
+            <Home
+                user={user}
+                handleVisibility={handleVisibility}
+                isInfoVisible={isInfoVisible}
+            />
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.purple,
-        flex: 1
+        flex: 1,
     },
-})
+});

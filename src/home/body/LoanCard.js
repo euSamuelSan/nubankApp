@@ -1,16 +1,10 @@
 import React from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    TouchableHighlight,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import Colors from "../../utils/Colors";
 
-export default function LoanCard({ user }) {
+export default function LoanCard({ user, isInfoVisible }) {
     const loan = user.bank.loan;
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.9}>
@@ -24,10 +18,16 @@ export default function LoanCard({ user }) {
             </View>
 
             <View style={styles.preApprovedValueContainer}>
-                <Text>Valor disponível de até</Text>
-                <Text style={styles.preApprovedValue}>
-                    R$ {loan.preApprovedValue}
-                </Text>
+                {isInfoVisible ? (
+                    <View>
+                        <Text>Valor disponível de até</Text>
+                        <Text style={styles.preApprovedValue}>
+                            R$ {loan.preApprovedValue}
+                        </Text>
+                    </View>
+                ) : (
+                    <View style={styles.hiddenInfo}></View>
+                )}
             </View>
 
             <TouchableOpacity style={styles.simulateButton}>
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     preApprovedValueContainer: {
-        color: Colors.lightGrey,
         marginBottom: 15,
+        alignSelf: "stretch",
     },
     preApprovedValue: {
         fontWeight: "bold",
@@ -77,5 +77,9 @@ const styles = StyleSheet.create({
     simulateButtonText: {
         color: Colors.purple,
         fontWeight: "bold",
+    },
+    hiddenInfo: {
+        backgroundColor: Colors.smoke,
+        padding: 25,
     },
 });

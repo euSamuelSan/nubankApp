@@ -8,4 +8,5 @@ export default Colors = {
     lightRed: "#e55c5a",
     darkGreen: "#478666",
     lightPink: "#ecd8fa",
+    smoke: "#f5f5f5",
 };

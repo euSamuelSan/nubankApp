@@ -1,7 +1,6 @@
 import React from "react";
 import {
     StyleSheet,
-    View,
     TouchableOpacity,
     Text,
     ScrollView,
@@ -138,7 +137,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         display: "flex",
         flexDirection: "row",
-        //justifyContent: 'flex-start',
     },
     box: {
         width: 100,

@@ -4,7 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 
 import Colors from "../../utils/Colors";
 
-export default function CreditCardCard({ user }) {
+export default function CreditCardCard({ user, isInfoVisible }) {
     const creditCard = user.bank.creditCard;
 
     const getInvoiceColor = () => {
@@ -31,16 +31,22 @@ export default function CreditCardCard({ user }) {
                         : "Fatura atual"}
                 </Text>
 
-                <Text style={styles.actualInvoiceValue}>
-                    R$ {creditCard.actualInvoice}
-                </Text>
+                {isInfoVisible ? (
+                    <View>
+                        <Text style={styles.actualInvoiceValue}>
+                            R$ {creditCard.actualInvoice}
+                        </Text>
 
-                <View style={styles.availableLimitContainer}>
-                    <Text>Limite disponível</Text>
-                    <Text style={styles.availableLimitValue}>
-                        R$ {user.prefs.customAvailableLimit}
-                    </Text>
-                </View>
+                        <View style={styles.availableLimitContainer}>
+                            <Text>Limite disponível</Text>
+                            <Text style={styles.availableLimitValue}>
+                                R$ {user.prefs.customAvailableLimit}
+                            </Text>
+                        </View>
+                    </View>
+                ) : (
+                    <View style={styles.hiddenInfo}></View>
+                )}
             </View>
         </TouchableOpacity>
     );
@@ -83,5 +89,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: Colors.cyan,
         fontWeight: "bold",
+    },
+    hiddenInfo: {
+        backgroundColor: Colors.smoke,
+        padding: 25,
     },
 });

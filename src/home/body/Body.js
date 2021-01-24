@@ -7,12 +7,12 @@ import LoanCard from "./LoanCard";
 import RewardsCard from "./RewardsCard";
 import LifeInsuranceCard from "./LifeInsuranceCard";
 
-export default function Body({ user, isVisibe }) {
+export default function Body({ user, isInfoVisible }) {
     return (
         <ScrollView>
-            <CreditCardCard user={user} isVisibe={isVisibe} />
-            <WalletCard user={user} isVisibe={isVisibe} />
-            <LoanCard user={user} isVisibe={isVisibe} />
+            <CreditCardCard user={user} isInfoVisible={isInfoVisible} />
+            <WalletCard user={user} isInfoVisible={isInfoVisible} />
+            <LoanCard user={user} isInfoVisible={isInfoVisible} />
             <RewardsCard />
             <LifeInsuranceCard />
         </ScrollView>

@@ -1,24 +1,8 @@
 import React from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    TouchableHighlight,
-    Alert,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 import Colors from "../../utils/Colors";
-
-const handleOnPress = () => {
-    Alert.alert("ATENÇÃO", "Botão Clicado", [
-        {
-            text: "Ok",
-            onPress: () => console.log("apertado"),
-        },
-    ]);
-};
 
 export default function RewardsCard({}) {
     return (
