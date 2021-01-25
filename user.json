@@ -1,0 +1,32 @@
+{
+    "info": {
+        "name": "Samuel",
+        "email": "example@gmail.com",
+        "phoneNumber": "(31)96555-2323",
+        "monthlyIncome": 2000,
+        "appPassword": "somePassword"
+    },
+    "prefs": {
+        "visibility": "isInfoVisible",
+        "customAvailableLimit": 400.0
+    },
+    "bank": {
+        "creditCard": {
+            "active": true,
+            "invoiceClosed": false,
+            "totalLimit": 1800.0,
+            "actualInvoice": 0.0
+        },
+        "account": {
+            "balance": 543.97,
+            "agency": 1,
+            "account": 12234234,
+            "digit": 5
+        },
+        "loan": {
+            "active": false,
+            "available": true,
+            "preApprovedValue": 7700
+        }
+    }
+}

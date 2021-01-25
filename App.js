@@ -1,49 +1,67 @@
+import "react-native-gesture-handler";
+
 import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import Colors from "./src/utils/Colors";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "./src/home/Home";
 
+const Stack = createStackNavigator();
+
+const storeUserData = async (user) => {
+    try {
+        const userData = JSON.stringify(user);
+
+        await AsyncStorage.setItem("@user_data", userData);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const getUserData = async () => {
+    try {
+        let userData = await AsyncStorage.getItem("@user_data");
+
+        if (userData) {
+            userData = JSON.parse(userData);
+            return userData;
+        } else return null;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const UserContext = React.createContext(getUserData());
+
 export default function App() {
+    let user = getUserData();
+
+    if (!user) {
+    }
+
     const [isInfoVisible, setisInfoVisible] = useState(false);
     const handleVisibility = () => {
         setisInfoVisible((state) => !state);
     };
 
-    const user = {
-        info: {
-            name: "Samuel",
-        },
-        prefs: {
-            visibility: isInfoVisible,
-            customAvailableLimit: 400.0,
-        },
-        bank: {
-            creditCard: {
-                active: true,
-                invoiceClosed: false,
-                totalLimit: 1800.0,
-                actualInvoice: 0.0,
-            },
-            account: {
-                balance: 543.97,
-            },
-            loan: {
-                active: false,
-                available: true,
-                preApprovedValue: 7700,
-            },
-        },
-    };
-
-    return (
-        <View style={styles.container}>
+    {
+        /* <View style={styles.container}>
             <Home
                 user={user}
                 handleVisibility={handleVisibility}
                 isInfoVisible={isInfoVisible}
             />
-        </View>
+</View> */
+    }
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name={"home"} component={Home} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 

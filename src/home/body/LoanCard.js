@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.white,
         marginBottom: 18,
-        borderRadius: 5,
+        borderRadius: 2,
         padding: 20,
         alignItems: "flex-start",
     },

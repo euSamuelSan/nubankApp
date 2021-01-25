@@ -35,9 +35,9 @@ export default function Home({ user, handleVisibility, isInfoVisible }) {
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: "stretch",
         backgroundColor: Colors.purple,
         margin: 20,
-        alignItems: "stretch",
         justifyContent: "flex-start",
         flexDirection: "column",
         flex: 1,
